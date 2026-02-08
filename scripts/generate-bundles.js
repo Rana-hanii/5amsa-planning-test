@@ -34,9 +34,9 @@ const PAGES = {
 
 // Base CSS files (shared libs)
 const CSS_BASE_FILES = [
-    // 'assets/css/bootstrap.min.css',
+    'assets/css/bootstrap.min.css',
     'assets/css/fonts.css',
-    // 'assets/css/fontawesome.min.css'
+    'assets/css/fontawesome.min.css'
 ];
 
 // Feature CSS files
@@ -53,7 +53,7 @@ const CSS_RTL_AUTH = 'assets/css/rtl-auth.css';
 // Core JS files
 const CORE_JS = [
     'assets/js/jquery-3.7.1.min.js',
-    // 'assets/js/bootstrap.min.js' // Commented out as requested
+    'assets/js/bootstrap.min.js'
 ];
 
 // Feature JS files
