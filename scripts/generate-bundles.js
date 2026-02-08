@@ -10,7 +10,7 @@ const ROOT = path.join(__dirname, '..');
 
 // Page configurations
 const PAGES = {
-    'home': { features: ['swiper', 'isotope', 'fancybox'] },
+    'home': { features: ['swiper', 'isotope'] },
     'about': { features: ['swiper', 'wow'] },
     'courses-grid': { features: ['wow', 'isotope'] },
     'courses-list': { features: ['wow'] },
@@ -36,11 +36,16 @@ const PAGES = {
 const CSS_BASE_FILES = [
     'assets/css/bootstrap.min.css',
     'assets/css/fonts.css',
-    'assets/css/fontawesome.min.css',
-    'assets/css/swiper-bundle.min.css',
-    'assets/css/fancybox.min.css',
-    'assets/css/animate.css',
+    'assets/css/fontawesome.min.css'
 ];
+
+// Feature CSS files
+const FEATURE_CSS = {
+    'swiper': 'assets/css/swiper-bundle.min.css',
+    'wow': 'assets/css/animate.css',
+    'fancybox': 'assets/css/fancybox.min.css'
+};
+
 // Each page has its own full style: src/css/pages/<page>.css (common + page-specific, no separate common)
 const CSS_PAGE_FILE = (pageName) => `src/css/pages/${pageName}.css`;
 const CSS_RTL_AUTH = 'assets/css/rtl-auth.css';
@@ -87,15 +92,28 @@ function fixCSSPaths(content) {
     return content;
 }
 
-function generateCSSBundle(pageName) {
+function generateCSSBundle(pageName, features) {
     let css = `/* ${pageName} CSS Bundle - Generated */\n\n`;
 
+    // Add Base CSS
     CSS_BASE_FILES.forEach((file) => {
         let content = readFile(file);
         if (content) {
             css += `/* === ${file} === */\n${fixCSSPaths(content)}\n\n`;
         }
     });
+
+    // Add Feature CSS
+    if (features) {
+        features.forEach(feature => {
+            if (FEATURE_CSS[feature]) {
+                const content = readFile(FEATURE_CSS[feature]);
+                if (content) {
+                    css += `/* === Feature: ${feature} === */\n${fixCSSPaths(content)}\n\n`;
+                }
+            }
+        });
+    }
 
     const pageCssFile = CSS_PAGE_FILE(pageName);
     let pageContent = readFile(pageCssFile);
@@ -159,7 +177,7 @@ for (const [pageName, config] of Object.entries(PAGES)) {
     console.log(`  📦 ${pageName}...`);
 
     // Generate CSS bundle
-    const cssBundle = generateCSSBundle(pageName);
+    const cssBundle = generateCSSBundle(pageName, config.features);
     fs.writeFileSync(path.join(cssBundleDir, `${pageName}.bundle.css`), cssBundle);
 
     // Generate JS bundle
