@@ -10,7 +10,7 @@ const ROOT = path.join(__dirname, '..');
 
 // Page configurations
 const PAGES = {
-    'home': { features: ['swiper', 'wow', 'isotope'] },
+    'home': { features: ['swiper', 'isotope', 'fancybox'] },
     'about': { features: ['swiper', 'wow'] },
     'courses-grid': { features: ['wow', 'isotope'] },
     'courses-list': { features: ['wow'] },
@@ -61,7 +61,7 @@ const FEATURE_JS = {
 
 // Custom JS files
 const CUSTOM_JS = [
-    'assets/js/bg-moving.js',
+    // 'assets/js/bg-moving.js', // Removed
     'assets/js/custom-scroll-count.js',
     'assets/js/back-to-top.js',
     'assets/js/custom.js',
