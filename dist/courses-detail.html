@@ -102,14 +102,15 @@
         }
     </style>
     <!-- Main Style CSS Link -->
-    <link rel="preload" href="assets/css/bundles/courses-detail.bundle.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
+    
     <noscript>
-        <link rel="stylesheet" href="assets/css/bundles/courses-detail.bundle.css">
+        
     </noscript>
     <!-- Main Style CSS Link -->
 
     <noscript></noscript>
+    <link rel="preload" href="assets/css/bundles/courses-detail.bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/bundles/courses-detail.bundle.css"></noscript>
 </head>
 
 <body class="fixed">
@@ -687,9 +688,9 @@
     <!-- Page Logic -->
 
     <!-- Bundled JS -->
-    <script src="assets/js/bundles/courses-detail.bundle.js"></script>
+    
     <!-- Page Logic -->
-    <script src="assets/js/pages/courses-detail.js"></script>
+    
 
     <!-- Auth Modal -->
     <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
@@ -713,6 +714,11 @@
             </div>
         </div>
     </div>
+    <!-- Bundled JS -->
+    <script src="assets/js/bundles/courses-detail.bundle.js"></script>
+    <!-- Page Logic -->
+    <script src="assets/js/pages/courses-detail.js"></script>
+
 
 </body>
 

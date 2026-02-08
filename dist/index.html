@@ -100,7 +100,9 @@
         }
     </style>
     <!-- Main Style CSS Link -->
-    <link rel="stylesheet" href="assets/css/bundles/home.bundle.css">
+    
+    <link rel="preload" href="assets/css/bundles/home.bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/bundles/home.bundle.css"></noscript>
 </head>
 
 <body class="fixed">
@@ -1385,12 +1387,15 @@
     <!-- Bootstrap JS Link -->
 
     <!-- Bundled JS -->
-    <script src="assets/js/bundles/home.bundle.js"></script>
+    
     <!-- Page Logic -->
-    <script src="assets/js/pages/home.js"></script>
+    
 
     <!-- Page Logic -->
 
+    <!-- Bundled JS -->
+    
+    <!-- Page Logic -->
     <!-- Bundled JS -->
     <script src="assets/js/bundles/home.bundle.js"></script>
     <!-- Page Logic -->

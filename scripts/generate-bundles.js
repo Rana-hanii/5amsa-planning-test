@@ -34,9 +34,9 @@ const PAGES = {
 
 // Base CSS files (shared libs)
 const CSS_BASE_FILES = [
-    // 'assets/css/bootstrap.min.css', // Commented out as requested
+    // 'assets/css/bootstrap.min.css',
     'assets/css/fonts.css',
-    // 'assets/css/fontawesome.min.css' // Commented out as requested
+    // 'assets/css/fontawesome.min.css'
 ];
 
 // Feature CSS files
