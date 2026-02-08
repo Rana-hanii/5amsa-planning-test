@@ -39,7 +39,6 @@ const CSS_BASE_FILES = [
     'assets/css/fontawesome.min.css',
     'assets/css/swiper-bundle.min.css',
     'assets/css/fancybox.min.css',
-    'assets/css/jquery-ui.css',
     'assets/css/animate.css',
 ];
 // Each page has its own full style: src/css/pages/<page>.css (common + page-specific, no separate common)
@@ -57,8 +56,7 @@ const FEATURE_JS = {
     'swiper': 'assets/js/swiper-bundle.min.js',
     'wow': 'assets/js/wow.min.js',
     'isotope': 'assets/js/isotope.pkgd.min.js',
-    'fancybox': 'assets/js/fancybox.min.js',
-    'jquery-ui': 'assets/js/jquery-ui.min.js'
+    'fancybox': 'assets/js/fancybox.min.js'
 };
 
 // Custom JS files

@@ -22,13 +22,19 @@ var lFollowX = 0,
     y = 0,
     friction = 1 / 30;
 
+var $animateThis = null;
+
 function moveBackground() {
     x += (lFollowX - x) * friction;
     y += (lFollowY - y) * friction;
 
     translate = "translateX(" + x + "px) translateY(" + y + "px)";
 
-    $(".animate-this").css({
+    if (!$animateThis || $animateThis.length === 0) {
+        $animateThis = $(".animate-this");
+    }
+
+    $animateThis.css({
         "-webit-transform": translate,
         "-moz-transform": translate,
         transform: translate,
